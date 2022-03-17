@@ -28,7 +28,7 @@ if ($user)
 		//-- Trang thêm bài viết --
 		if ($ac == 'add')
 		{
-			echo 
+			echo
 			'
 				<a href="'.$_DOMAIN.'admin/posts" class="btn btn-default">
 					<span class="glyphicon glyphicon-arrow-left"></span> Trở về
@@ -36,7 +36,7 @@ if ($user)
 			';
 
 			//-- Content thêm bài viết --
-			echo 
+			echo
 			'
 				<p class="form-add-post">
 					<form method="POST" id="formAddPost" onsubmit="return false;">
@@ -53,7 +53,7 @@ if ($user)
 							<label>Mô tả bài viết</label>
 							<textarea id="descr_add_post" class="form-control"></textarea>
 						</div>
-						
+
 						<div class="form-group">
 							<label>Nội dung bài viết</label>
 							<textarea id="body_add_post" class="form-control"></textarea>
@@ -75,7 +75,7 @@ if ($user)
 				$data_post = $db->fetch_assoc($sql_check_id_cate, 1);
 				if ($data_post['author_id'] == $data_user['id_acc'] || $data_user['position'] == '1')
 				{
-					echo 
+					echo
 					'
 						<a href="'.$_DOMAIN.'admin/posts" class="btn btn-default">
 							<span class="glyphicon glyphicon-arrow-left"></span> Trở về
@@ -89,10 +89,10 @@ if ($user)
 					$sql_get_data_post = "SELECT * FROM posts WHERE id_post = '$id'";
 					$data_post = $db->fetch_assoc($sql_get_data_post, 1);
 
-					echo 
+					echo
 					'
 						<p class="form-edit-post">
-							<form method="POST" id="formEditPost" data-id="'.$id.'" onsubmit="return false;">
+							<form method="POST" id="formEditPost" data-id="' . $id . '" onsubmit="return false;">
 								<div class="form-group">
 									<label class="alert-info">Lưu ý: Chuyển nội dung bài viết sang định dạng "Mã HTML" sau đó mới lưu bài viết, để tránh bị lỗi!</label>
 								</div>
@@ -105,7 +105,7 @@ if ($user)
 					// Nếu đã xuất bản
 					if ($data_post['status'] == '1')
 					{
-						echo 
+						echo
 						'
 								<div class="radio">
 									<label>
@@ -121,7 +121,7 @@ if ($user)
 					} //Nếu đang ẩn
 					else if ($data_post['status'] == '0')
 					{
-						echo 
+						echo
 						'
 								<div class="radio">
 									<label>
@@ -135,28 +135,28 @@ if ($user)
 								</div>
 						';
 					}
-					echo 
+					echo
 					'
 								</div>
 								<div class="form-group">
 									<label>Tiêu đề bài viết</label>
-									<input type="text" class="form-control title" value="'.$data_post['title'].'" id="title_edit_post">
+									<input type="text" class="form-control title" value="' . $data_post['title'] . '" id="title_edit_post">
 								</div>
 								<div class="form-group">
 									<label>Slug bài viết</label>
-									<input type="text" class="form-control slug" value="'.$data_post['slug'].'" id="slug_edit_post">
+									<input type="text" class="form-control slug" value="' . $data_post['slug'] . '" id="slug_edit_post">
 								</div>
 								<div class="form-group">
 									<label>Url thumbnail</label>
-									<input type="text" class="form-control" value="'.$data_post['url_thumb'].'" id="url_thumb_edit_post">
+									<input type="text" class="form-control" value="' . $data_post['url_thumb'] . '" id="url_thumb_edit_post">
 								</div>
 								<div class="form-group">
 									<label>Mô tả bài viết</label>
-									<textarea id="descr_edit_post" class="form-control">'.$data_post['descr'].'</textarea>
+									<textarea id="descr_edit_post" class="form-control">' . $data_post['descr'] . '</textarea>
 								</div>
 								<div class="form-group">
 									<label>Từ khóa bài viết</label>
-									<input type="text" class="form-control" value="'.$data_post['keywords'].'" id="keywords_edit_post">
+									<input type="text" class="form-control" value="' . $data_post['keywords'] . '" id="keywords_edit_post">
 								</div>
 								<div class="form-group cate_post_1">
 									<label>Chuyên mục lớn</label>
@@ -175,17 +175,17 @@ if ($user)
 						{
 							if ($data_cate_1['id_cate'] == $data_post['cate_1_id'])
 							{
-								echo '<option value="'.$data_cate_1['id_cate'].'" selected>'.$data_cate_1['label'].'</option>';
+								echo '<option value="' . $data_cate_1['id_cate'] . '" selected>' . $data_cate_1['label'] . '</option>';
 							}else
 							{
-								echo '<option value="'.$data_cate_1['id_cate'].'">'.$data_cate_1['label'].'</option>';
+								echo '<option value="' . $data_cate_1['id_cate'] . '">' . $data_cate_1['label'] . '</option>';
 							}
 						}
 					}else
 					{
 						echo '<option value="0">Chưa có chuyên mục lớn nào</option>';
 					}
-					echo 
+					echo
 					'
 									</select>
 								</div>
@@ -205,17 +205,17 @@ if ($user)
 						foreach ($db->fetch_assoc($sql_get_cate_post_2, 0) as $key => $data_cate_2) {
 							if ($data_cate_2['id_cate'] == $data_post['cate_2_id'])
 							{
-								echo '<option value="'.$data_cate_2['id_cate'].'" selected>'.$data_cate_2['label'].'</option>';
+								echo '<option value="' . $data_cate_2['id_cate'] . '" selected>' . $data_cate_2['label'] . '</option>';
 							}else
 							{
-								echo '<option value="'.$data_cate_2['id_cate'].'">'.$data_cate_2['label'].'</option>';
+								echo '<option value="' . $data_cate_2['id_cate'] . '">' . $data_cate_2['label'] . '</option>';
 							}
 						}
 					}else
 					{
 						echo '<option value="0">Chưa có chuyên mục vừa nào</option>';
 					}
-					echo 
+					echo
 					'
 										</select>
 									</div>
@@ -230,16 +230,16 @@ if ($user)
 					{
 						if ($data_post['cate_3_id'] == '0')
 						{
-							echo '<option value="">Vui lòng chọn chuyên mục</option>'; 
+							echo '<option value="">Vui lòng chọn chuyên mục</option>';
 						}
-						foreach ($db->fetch_assoc($sql_get_cate_post_3, 0) as $key => $data_cate_3) 
+						foreach ($db->fetch_assoc($sql_get_cate_post_3, 0) as $key => $data_cate_3)
 						{
 							if ($data_cate_3['id_cate'] == $data_post['cate_3_id'])
 							{
-								echo '<option value="'.$data_cate_3['id_cate'].'" selected>'.$data_cate_3['label'].'</option>';
+								echo '<option value="' . $data_cate_3['id_cate'] . '" selected>' . $data_cate_3['label'] . '</option>';
 							}else
 							{
-								echo '<option value="'.$data_cate_3['id_cate'].'">'.$data_cate_3['label'].'</option>';
+								echo '<option value="' . $data_cate_3['id_cate'] . '">' . $data_cate_3['label'] . '</option>';
 							}
 						}
 					}else
@@ -247,19 +247,19 @@ if ($user)
 						echo '<option value="0">Chưa có chuyên mục nhỏ nào</option>';
 					}
 
-					echo 
+					echo
 					'
 										</select>
 									</div>
-									
+
 									<div class="form-group">
 										<label>Nội dung bài viết</label>
-										<textarea id="body_edit_post" class="form-control">'.$data_post['body'].'</textarea>
+										<textarea id="body_edit_post" class="form-control">' . $data_post['body'] . '</textarea>
 									</div>
 									<div class="form-group">
 										<button type="submit" class="btn btn-primary">Lưu thay đổi</button>
 									</div>
-									
+
 							</form>
 						</p>
 					';
@@ -278,7 +278,7 @@ if ($user)
 	//-- Trang danh sách bài viết --
 	else
 	{
-		echo 
+		echo
 		'
 			<a href="'.$_DOMAIN.'admin/posts/add" class="btn btn-default">
 				<span class="glyphicon glyphicon-plus"></span> Thêm
@@ -346,7 +346,7 @@ if ($user)
 			}
 
 			//Form tìm kiếm
-			echo 
+			echo
 			'
 				<p>
 					<form method="POST" id="formSearchPost" onsubmit="return false;">
@@ -360,7 +360,7 @@ if ($user)
 				</p>
 			';
 
-			echo 
+			echo
 			'
 				<div class="table-responsive" id="list_post">
 					<table class="table table-striped list">
@@ -378,7 +378,7 @@ if ($user)
 				echo '<td><strong>Tác giả</strong></td>';
 			}
 
-			echo 
+			echo
 			'
 							<td><strong>Tools</strong></td>
 						</tr>
@@ -393,7 +393,7 @@ if ($user)
 				$sql_get_list_post_limit = "SELECT * FROM posts WHERE author_id = '$data_user[id_acc]' ORDER BY id_post DESC LIMIT $start, $limit";
 			}
 			//In danh sách bài viết
-			foreach ($db->fetch_assoc($sql_get_list_post_limit, 0) as $key => $data_post) 
+			foreach ($db->fetch_assoc($sql_get_list_post_limit, 0) as $key => $data_post)
 			{
 				//Trạng thái bài viết
 				if ($data_post['status'] == 0)
@@ -447,15 +447,15 @@ if ($user)
 					$author_post = '<span class="text-danger">Lỗi</span>';
 				}
 
-				echo 
+				echo
 				'
 					<tr>
-						<td><input type="checkbox" name="id_post[]" value="'.$data_post['id_post'].'"></td>
-						<td>'.$data_post['id_post'].'</td>
-						<td style="width: 30%;"><a href="'.$_DOMAIN.'admin/posts/edit/'.$data_post['id_post'].'">'.$data_post['title'].'</a></td>
-						<td>'.$stt_post.'</td>
-						<td>'.$cate_post.'</td>
-						<td>'.$data_post['view'].'</td>
+						<td><input type="checkbox" name="id_post[]" value="' . $data_post['id_post'] . '"></td>
+						<td>' . $data_post['id_post'] . '</td>
+						<td style="width: 30%;"><a href="' . $_DOMAIN . 'admin/posts/edit/' . $data_post['id_post'] . '">' . $data_post['title'] . '</a></td>
+						<td>' .$stt_post . '</td>
+						<td>' . $cate_post . '</td>
+						<td>' . $data_post['view'] . '</td>
 				';
 
 				// Tác giả bài viết
@@ -464,20 +464,20 @@ if ($user)
 					echo '<td>'.$author_post.'</td>';
 				}
 
-				echo 
+				echo
 				'
 						<td>
-							<a href="'.$_DOMAIN.'admin/posts/edit/'.$data_post['id_post'].'" class="btn btn-primary">
+							<a href="' . $_DOMAIN . 'admin/posts/edit/' . $data_post['id_post'] . '" class="btn btn-primary">
 								<span class="glyphicon glyphicon-edit"></span>
 							</a>
-							<a class="btn btn-danger btn-sm del-post-list" data-id="'.$data_post['id_post'].'">
+							<a class="btn btn-danger btn-sm del-post-list" data-id="' . $data_post['id_post'] . '">
 								<span class="glyphicon glyphicon-trash"></span>
 							</a>
 						</td>
 					</tr>
 				';
 			}
-			echo 
+			echo
 			'
 					</table>
 			';
@@ -486,7 +486,7 @@ if ($user)
 			echo '<div class="btn-group" id="paging_post">';
 			if ($current_page > 1 && $total_page > 1)
 			{
-				echo '<a class="btn btn-default" href="'.$_DOMAIN.'admin/posts&page='.($current_page - 1).'">
+				echo '<a class="btn btn-default" href="' . $_DOMAIN . 'admin/posts&page=' . ($current_page - 1) . '">
 					<span class="glyphicon glyphicon-chevron-left"></span> Prev
 				</a>';
 			}
@@ -495,18 +495,18 @@ if ($user)
 			{
 				if ($i == $current_page)
 				{
-					echo '<a class="btn btn-default active">'.$i.'</a>';
+					echo '<a class="btn btn-default active">' . $i . '</a>';
 				}else
 				{
-					echo '<a class="btn btn-default" href="'.$_DOMAIN.'admin/posts&page='.$i.'">'.$i.'</a>';
+					echo '<a class="btn btn-default" href="' . $_DOMAIN . 'admin/posts&page=' . $i . '">' . $i . '</a>';
 				}
 			}
 			if ($current_page < $total_page && $total_page > 1)
 			{
-				echo '<a class="btn btn-default" href="'.$_DOMAIN.'admin/posts&page='.($current_page + 1).'">Next <span class="glyphicon glyphicon-chevron-right"></span></a>';
+				echo '<a class="btn btn-default" href="' . $_DOMAIN . 'admin/posts&page=' . ($current_page + 1) . '">Next <span class="glyphicon glyphicon-chevron-right"></span></a>';
 			}
 			echo '<br><br><br></div>';
-			echo 
+			echo
 			'
 				</div>
 			';

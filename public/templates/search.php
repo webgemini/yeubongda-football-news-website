@@ -59,21 +59,21 @@ $limit_view = 12;
 							{
 								foreach ($db->fetch_assoc($sql_get_news, 0) as $data_post)
 								{
-									echo 
+									echo
 									'
 									<li>
 									<div class="pkg">
-										<a href="'.$_DOMAIN . $data_post['slug'].'-'.$data_post['id_post'].'.html" class="thumbblock thumb260x170 fl" title="'.$data_post['title'].'">
-										<img src="'.$data_post['url_thumb'].'" width="240" height="145" alt="'.$data_post['title'].'">
+										<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumbblock thumb260x170 fl" title="' . $data_post['title'] . '">
+										<img src="' . $data_post['url_thumb'] . '" width="240" height="145" alt="' . $data_post['title'] . '">
 										</a>
 										<div class="info_list_top_news">
 										<div class="time_comment text-left mar_bottom7">
 											<h2>
-											<a href="'.$_DOMAIN . $data_post['slug'].'-'.$data_post['id_post'].'.html" class="title_list_top_news" title="'.$data_post['title'].'">'.$data_post['title'].'</a>
+											<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="title_list_top_news" title="' . $data_post['title'] . '">' . $data_post['title'] . '</a>
 											</h2>
 										</div>
 											<div class="sapo_news txt_align_just">
-												<p>'.$data_post['descr'].'</p>
+												<p>' . $data_post['descr'] . '</p>
 											</div>
 										</div>
 									</div>
@@ -82,7 +82,7 @@ $limit_view = 12;
 								}
 				echo '</ul>';
 
-								echo 
+								echo
 								'
 									<section>
 										<div class="paging">
@@ -90,9 +90,9 @@ $limit_view = 12;
 								# Pagination button
 								if ($page > 1 && $totalPage > 1)
 								{
-									echo 
+									echo
 									'
-									<a href="'.$_DOMAIN.($page - 1).'">
+									<a href="' . $_DOMAIN . ($page - 1) . '">
 										<i class="fa fa-angle-left" aria-hidden="true"></i>
 									</a>
 									';
@@ -102,20 +102,20 @@ $limit_view = 12;
 								{
 									if ($i == $page)
 									{
-										echo '<a class="active">'.$i.'</a>';
+										echo '<a class="active">' . $i . '</a>';
 									}else {
-										echo 
+										echo
 										'
-										<a href="'.$_DOMAIN.$i.'" class="btn btn-default">'.$i.'</a>
+										<a href="' . $_DOMAIN . $i .'" class="btn btn-default">' . $i . '</a>
 										';
 									}
 								}
 
 								if ($page < $totalPage && $totalPage > 1)
 								{
-									echo 
+									echo
 									'
-									<a href="'.$_DOMAIN.($page + 1).'">
+									<a href="' . $_DOMAIN . ($page + 1).'">
 										<i class="fa fa-angle-right" aria-hidden="true"></i>
 									</a>
 									';
@@ -146,10 +146,10 @@ $limit_view = 12;
 							{
 								foreach ($db->fetch_assoc($sql_get_list_hot_news, 0) as $data_post)
 								{
-									echo 
+									echo
 									'
 									<li>
-									<h2><a href="'.$_DOMAIN . $data_post['slug'] .'-'. $data_post['id_post'] .'.html" class="f14" title="'.$data_post['title'].'">'.$data_post['title'].'</a></h2>
+									<h2><a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="f14" title="' . $data_post['title'] . '">' . $data_post['title'] . '</a></h2>
 									</li>
 									';
 								}
@@ -176,14 +176,14 @@ $limit_view = 12;
 							{
 								foreach ($db->fetch_assoc($sql_get_list_hot_news, 0) as $data_post)
 								{
-									echo 
+									echo
 									'
 									<li>
-										<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumb140x90 thumbblock" title="'.$data_post['title'].'">
-				                            <img class="news_docnhieu playvideo" src="' . $data_post['url_thumb'] . '" width="140" height="90" alt="'.$data_post['title'].'">
+										<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumb140x90 thumbblock" title="' . $data_post['title'] . '">
+				                            <img class="news_docnhieu playvideo" src="' . $data_post['url_thumb'] . '" width="140" height="90" alt="' . $data_post['title'] . '">
 				                        </a>
 				                        <h3>
-				                        <a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="f14" title="'.$data_post['title'].'"><span>' . $data_post['title'] . '</span></a>
+				                        <a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="f14" title="' . $data_post['title'].'"><span>' . $data_post['title'] . '</span></a>
 				                        </h3>
 				                        <div class="time_comment mar_top7 mar_bottom7"></div>
 				                    </li>

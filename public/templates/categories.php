@@ -25,7 +25,7 @@ if ($db->num_rows($sql_get_id_cate))
 						// In chuyên mục bài viết
 						echo '
 						<li itemscope>
-						<a itemscope="url" href="'.$_DOMAIN.'" title="Yêu Bóng Đá"><span itemprop="title">Trang chủ</span></a>
+						<a itemscope="url" href="' . $_DOMAIN . '" title="Yêu Bóng Đá"><span itemprop="title">Trang chủ</span></a>
 						</li>
 						';
 							if ($id_cate)
@@ -36,7 +36,7 @@ if ($db->num_rows($sql_get_id_cate))
 									$data_cate = $db->fetch_assoc($sql_get_data_cate, 1);
 									echo '
 									<li itemscope>
-									<a href="'.$_DOMAIN . $data_cate['url'].'" title="'.$data_cate['label'].'"><span itemprop="title">'.$data_cate['label'].'</span></a>
+									<a href="' . $_DOMAIN . $data_cate['url'] . '" title="' . $data_cate['label'] . '"><span itemprop="title">' . $data_cate['label'] . '</span></a>
 									</li>
 									';
 								}
@@ -94,17 +94,17 @@ if ($db->num_rows($sql_get_id_cate))
 										'
 										<li>
 											<div class="pkg">
-												<a href="'.$_DOMAIN . $data_post['slug'].'-'.$data_post['id_post'].'.html" class="thumbblock thumb260x170 fl" title="'.$data_post['title'].'">
-												<img src="'.$data_post['url_thumb'].'" width="240" height="145" alt="'.$data_post['title'].'">
+												<a href="'.$_DOMAIN . $data_post['slug'].'-'.$data_post['id_post'].'.html" class="thumbblock thumb260x170 fl" title="' . $data_post['title'] . '">
+												<img src="' . $data_post['url_thumb'] . '" width="240" height="145" alt="'.$data_post['title'].'">
 												</a>
 												<div class="info_list_top_news">
 												<div class="time_comment text-left mar_bottom7">
 													<h2>
-													<a href="'.$_DOMAIN . $data_post['slug'].'-'.$data_post['id_post'].'.html" class="title_list_top_news" title="'.$data_post['title'].'">'.$data_post['title'].'</a>
+													<a href="'.$_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="title_list_top_news" title="' . $data_post['title'] . '">' . $data_post['title'] . '</a>
 													</h2>
 												</div>
 													<div class="sapo_news txt_align_just">
-														<p>'.$data_post['descr'].'</p>
+														<p>' . $data_post['descr'] . '</p>
 													</div>
 												</div>
 											</div>
@@ -122,7 +122,7 @@ if ($db->num_rows($sql_get_id_cate))
 									{
 										echo
 										'
-											<a href="'.$_DOMAIN.($page - 1).'">
+											<a href="' . $_DOMAIN . ($page - 1) .'">
 												<i class="fa fa-angle-left" aria-hidden="true"></i>
 											</a>
 										';
@@ -132,9 +132,9 @@ if ($db->num_rows($sql_get_id_cate))
 									{
 										if ($i == $page)
 										{
-											echo '<a class="active">'.$i.'</a>';
+											echo '<a class="active">' . $i . '</a>';
 										}else {
-											echo '<a href="'.$_DOMAIN.$i.'" class="btn btn-default">'.$i.'</a>';
+											echo '<a href="' . $_DOMAIN . $i . '" class="btn btn-default">' . $i . '</a>';
 										}
 									}
 
@@ -142,7 +142,7 @@ if ($db->num_rows($sql_get_id_cate))
 									{
 										echo
 										'
-											<a href="'.$_DOMAIN.($page + 1).'">
+											<a href="' . $_DOMAIN . ($page + 1) . '">
 												<i class="fa fa-angle-right" aria-hidden="true"></i>
 											</a>
 										';
@@ -173,7 +173,7 @@ if ($db->num_rows($sql_get_id_cate))
 									echo
 									'
 									<li>
-									<h2><a href="'.$_DOMAIN . $data_post['slug'] .'-'. $data_post['id_post'] .'.html" class="f14" title="'.$data_post['title'].'">'.$data_post['title'].'</a></h2>
+									<h2><a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] .'.html" class="f14" title="' . $data_post['title'] . '">' . $data_post['title'] . '</a></h2>
 									</li>
 									';
 								}
@@ -204,11 +204,11 @@ if ($db->num_rows($sql_get_id_cate))
 									echo
 									'
 									<li>
-										<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumb140x90 thumbblock" title="'.$data_post['title'].'">
-				                            <img class="news_docnhieu playvideo" src="' . $data_post['url_thumb'] . '" width="140" height="90" alt="'.$data_post['title'].'">
+										<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumb140x90 thumbblock" title="' . $data_post['title'] . '">
+				                            <img class="news_docnhieu playvideo" src="' . $data_post['url_thumb'] . '" width="140" height="90" alt="' . $data_post['title'] . '">
 				                        </a>
 				                        <h3>
-				                        <a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="f14" title="'.$data_post['title'].'"><span>' . $data_post['title'] . '</span></a>
+				                        <a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="f14" title="' . $data_post['title'] . '"><span>' . $data_post['title'] . '</span></a>
 				                        </h3>
 				                        <div class="time_comment mar_top7 mar_bottom7"></div>
 				                    </li>

@@ -8,7 +8,7 @@ if (isset($_POST['user_signin']) && isset($_POST['pass_signin']))
 	//Xử lý các giá trị
 	$user_signin = trim(htmlspecialchars(addslashes($_POST['user_signin'])));
 	$pass_signin = trim(htmlspecialchars(addslashes($_POST['pass_signin'])));
-	
+
 	//Các biến xử lý thông báo
 	$show_alert = '<script>$("#formSignin .alert").removeClass("hidden");</script>';
 	$hide_alert = '<script>$("#formSignin .alert").addClass("hidden");</script>';
@@ -18,7 +18,7 @@ if (isset($_POST['user_signin']) && isset($_POST['pass_signin']))
 	if ($user_signin == '' || $pass_signin == ''){
 		echo $show_alert.'Vui lòng điền đầy đủ thông tin!';
 	}else{ //Ngược lại
-		$sql_check_user_exist = "SELECT username FROM accounts WHERE username ='$user_signin'";
+		$sql_check_user_exist = "SELECT username FROM accounts WHERE username = '$user_signin'";
 		//Nếu có tồn tại username
 		if ($db->num_rows($sql_check_user_exist))
 		{

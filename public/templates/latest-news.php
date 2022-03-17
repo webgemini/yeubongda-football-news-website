@@ -16,22 +16,22 @@ $limit_view = 12;
 					if ($db->num_rows($sql_get_once_post_news))
 					{
 						$data_once_post = $db->fetch_assoc($sql_get_once_post_news, 1);
-						echo 
+						echo
 						'
-						<a class="thumb560x300 thumbblock mar_bottom15" href="'.$_DOMAIN . $data_once_post['slug'] .'-'. $data_once_post['id_post'].'.html" title="'.$data_once_post['title'].'">
-						<img src="'.$data_once_post['url_thumb'].'" width="100%" height="auto" alt="'.$data_once_post['title'].'">
+						<a class="thumb560x300 thumbblock mar_bottom15" href="' . $_DOMAIN . $data_once_post['slug'] . '-' . $data_once_post['id_post'].'.html" title="' . $data_once_post['title'] . '">
+						<img src="' . $data_once_post['url_thumb'] . '" width="100%" height="auto" alt="' . $data_once_post['title'] . '">
 						</a>
-						<a href="'.$_DOMAIN . $data_once_post['slug'] .'-'. $data_once_post['id_post'].'.html" title="'.$data_once_post['title'].'" class="mar_bottom10">
-							<h1 class="f22 fontRoboto">'.$data_once_post['title'].'</h1>
+						<a href="' . $_DOMAIN . $data_once_post['slug'] . '-' . $data_once_post['id_post'] . '.html" title="' . $data_once_post['title'] . '" class="mar_bottom10">
+							<h1 class="f22 fontRoboto">' . $data_once_post['title'] . '</h1>
 						</a>
 						<div class="mar_bottom15 pad_bottom10 border-bottom-ccc">
-							'.$data_once_post['descr'].'
+							' . $data_once_post['descr'] . '
 						</div>
 						';
 					}else {
 						echo '<div class="alert alert-info">Chưa có bài viết nào.</div>';
 					}
-					
+
 					?>
 					<ul class="list_top_news">
 					<?php
@@ -40,15 +40,15 @@ $limit_view = 12;
 					{
 						foreach ($db->fetch_assoc($sql_get_latest_news, 0) as $data_post)
 						{
-							echo 
+							echo
 							'
 							<li>
 								<div class="pkg">
-									<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumbblock thumb110" title="'.$data_post['title'].'">
+									<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumbblock thumb110" title="' . $data_post['title'] . '">
 			                            <img src="' . $data_post['url_thumb'] . '" width="148" height="120" alt="'.$data_post['title'].'">
 			                        </a>
 			                        <h2>
-			                        <a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="title_list_top_news" title="'.$data_post['title'].'"><span>' . $data_post['title'] . '</span></a>
+			                        <a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="title_list_top_news" title="' . $data_post['title'] . '"><span>' . $data_post['title'] . '</span></a>
 			                        </h2>
 								</div>
 			                </li>
@@ -73,10 +73,10 @@ $limit_view = 12;
 						{
 							foreach ($db->fetch_assoc($sql_get_list_hot_news, 0) as $data_post)
 							{
-								echo 
+								echo
 								'
 								<li>
-								<h2><a href="'.$_DOMAIN . $data_post['slug'] .'-'. $data_post['id_post'] .'.html" class="f14" title="'.$data_post['title'].'">'.$data_post['title'].'</a></h2>
+								<h2><a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="f14" title="' . $data_post['title'] . '">' . $data_post['title'] . '</a></h2>
 								</li>
 								';
 							}
@@ -99,21 +99,21 @@ $limit_view = 12;
 							if ($db->num_rows($sql_get_once_post_news))
 							{
 								$data_once_post = $db->fetch_assoc($sql_get_once_post_news, 1);
-								echo 
+								echo
 								'
-								<a href="'.$_DOMAIN . $data_once_post['slug'] .'-'. $data_once_post['id_post'].'.html" class="thumbblock thumb240 mar_bottom10" title="'.$data_once_post['title'].'">
-									<img src="'.$data_once_post['url_thumb'].'" width="343" height="220" alt="'.$data_once_post['title'].'">
+								<a href="' . $_DOMAIN . $data_once_post['slug'] . '-' . $data_once_post['id_post'].'.html" class="thumbblock thumb240 mar_bottom10" title="'.$data_once_post['title'].'">
+									<img src="' . $data_once_post['url_thumb'] . '" width="343" height="220" alt="' . $data_once_post['title'] . '">
 								</a>
 								<h2>
-									<a href="'.$_DOMAIN . $data_once_post['slug'] .'-'. $data_once_post['id_post'].'.html" class="fontRoboto f22" title="'.$data_once_post['title'].'">
-										<span>'.$data_once_post['title'].'</span>
+									<a href="' . $_DOMAIN . $data_once_post['slug'] . '-' . $data_once_post['id_post'] . '.html" class="fontRoboto f22" title="' . $data_once_post['title'] . '">
+										<span>' . $data_once_post['title'] . '</span>
 									</a>
 								</h2>
 								<div class="time_comment mar_top7 mar_bottom7">
 									<span></span>
 								</div>
 								<div class="sapo_news">
-									'.$data_once_post['descr'].'
+									' . $data_once_post['descr'] . '
 								</div>
 								';
 							}else {
@@ -129,14 +129,14 @@ $limit_view = 12;
 							{
 								foreach ($db->fetch_assoc($sql_get_latest_news, 0) as $data_post)
 								{
-									echo 
+									echo
 									'
 									<li class="first pkg">
-										<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumbblock thumb140x90 fl" title="'.$data_post['title'].'">
+										<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumbblock thumb140x90 fl" title="' . $data_post['title'] . '">
 				                            <img src="' . $data_post['url_thumb'] . '" width="140" height="90" alt="'.$data_post['title'].'">
 				                        </a>
 				                        <h2>
-				                        <a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="f18" title="'.$data_post['title'].'"><span>' . $data_post['title'] . '</span></a>
+				                        <a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="f18" title="' . $data_post['title'] . '"><span>' . $data_post['title'] . '</span></a>
 				                        </h2>
 				                        <div class="time_comment mar_top7 mar_bottom7">
 				                        	<span></span>
@@ -168,14 +168,14 @@ $limit_view = 12;
 							{
 								foreach ($db->fetch_assoc($sql_get_list_hot_news, 0) as $data_post)
 								{
-									echo 
+									echo
 									'
 									<li>
-										<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumb140x90 thumbblock" title="'.$data_post['title'].'">
+										<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumb140x90 thumbblock" title="' . $data_post['title'] . '">
 				                            <img class="news_docnhieu playvideo" src="' . $data_post['url_thumb'] . '" width="140" height="90" alt="'.$data_post['title'].'">
 				                        </a>
 				                        <h3>
-				                        <a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="f14" title="'.$data_post['title'].'"><span>' . $data_post['title'] . '</span></a>
+				                        <a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="f14" title="' . $data_post['title'] . '"><span>' . $data_post['title'] . '</span></a>
 				                        </h3>
 				                        <div class="time_comment mar_top7 mar_bottom7"></div>
 				                    </li>

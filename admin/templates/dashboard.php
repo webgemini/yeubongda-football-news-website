@@ -8,24 +8,24 @@
 		$sql_get_count_post = "SELECT id_post FROM posts";
 		$count_all_post = $db->num_rows($sql_get_count_post);
 
-		echo 
+		echo
 		'
 			<div class="col-md-4">
 				<div class="alert alert-info">
 					<h1>'.$count_all_post.'</h1>
 					<p>Tổng bài viết</p>
-				</div>	
+				</div>
 			</div>
 		';
 	}else {
 		$sql_get_count_post_author = "SELECT id_post FROM posts WHERE author_id = '$data_user[id_acc]'";
 		$count_post_author = $db->num_rows($sql_get_count_post_author);
 
-		echo 
+		echo
 		'
 			<div class="col-md-4">
 				<div class="alert alert-info">
-					<h1>'.$count_post_author.'</h1>
+					<h1>' . $count_post_author . '</h1>
 					<p>Bài viết của bạn</p>
 				</div>
 			</div>
@@ -44,11 +44,11 @@
 			$count_post_public = $db->num_rows($sql_get_count_post_public);
 		}
 
-		echo 
+		echo
 		'
 			<div class="col-md-4">
 				<div class="alert alert-success">
-					<h1>'.$count_post_public.'</h1>
+					<h1>' . $count_post_public . '</h1>
 					<p>Bài viết xuất bản</p>
 				</div>
 			</div>
@@ -89,12 +89,12 @@
 		$label = 'Hình ảnh';
 	}
 	$count_img = $db->num_rows($sql_get_count_img);
-	echo 
+	echo
 	'
 	<div class="col-md-4">
 		<div class="alert alert-info">
-			<h1>'.$count_img.'</h1>
-			<p>'.$label.'</p>
+			<h1>' . $count_img . '</h1>
+			<p>' . $label . '</p>
 		</div>
 	</div>
 	';
@@ -114,7 +114,7 @@
 	if ($db->num_rows($sql_get_size_img))
 	{
 		$count_size_img = 0;
-		foreach ($db->fetch_assoc($sql_get_size_img, 0) as $data_img) 
+		foreach ($db->fetch_assoc($sql_get_size_img, 0) as $data_img)
 		{
 			$count_size_img = $count_size_img + $data_img['size'];
 		}
@@ -134,12 +134,12 @@
 		$count_size_img = round($count_size_img / 1073741824) . ' GB';
 	}
 
-	echo 
+	echo
 	'
 	<div class="col-md-4">
 		<div class="alert alert-success">
-			<h1>' .$count_size_img. '</h1>
-			<p>'.$label.'</p>
+			<h1>' . $count_size_img . '</h1>
+			<p>' . $label . '</p>
 		</div>
 	</div>
 	';
@@ -159,7 +159,7 @@
 	if ($db->num_rows($sql_get_count_img))
 	{
 		$count_error_img = 0;
-		foreach ($db->fetch_assoc($sql_get_count_img, 0) as $data_img) 
+		foreach ($db->fetch_assoc($sql_get_count_img, 0) as $data_img)
 		{
 			if (!file_exists('../' . $data_img['url'])){
 				$count_error_img++;
@@ -167,12 +167,12 @@
 		}
 	}
 
-	echo 
+	echo
 	'
 	<div class="col-md-4">
 		<div class="alert alert-danger">
-			<h1>' .$count_error_img. '</h1>
-			<p>'.$label.'</p>
+			<h1>' . $count_error_img . '</h1>
+			<p>' . $label . '</p>
 		</div>
 	</div>
 	';
@@ -190,11 +190,11 @@ if ($data_user['position'] == '1')
 	$sql_get_count_cate = "SELECT id_cate FROM categories";
 	$count_cate = $db->num_rows($sql_get_count_cate);
 
-	echo 
+	echo
 	'
 	<div class="col-md-3">
 		<div class="alert alert-info">
-			<h1>'.$count_cate.'</h1>
+			<h1>' . $count_cate . '</h1>
 			<p>Tổng chuyên mục</p>
 		</div>
 	</div>
@@ -205,11 +205,11 @@ if ($data_user['position'] == '1')
 	$sql_get_count_cate_1 = "SELECT id_cate FROM categories WHERE type = '1'";
 	$count_cate_1 = $db->num_rows($sql_get_count_cate_1);
 
-	echo 
+	echo
 	'
 	<div class="col-md-3">
 		<div class="alert alert-success">
-			<h1>'.$count_cate_1.'</h1>
+			<h1>' . $count_cate_1 . '</h1>
 			<p>Chuyên mục lớn</p>
 		</div>
 	</div>
@@ -220,11 +220,11 @@ if ($data_user['position'] == '1')
 	$sql_get_count_cate_2 = "SELECT id_cate FROM categories WHERE type = '2'";
 	$count_cate_2 = $db->num_rows($sql_get_count_cate_2);
 
-	echo 
+	echo
 	'
 	<div class="col-md-3">
 		<div class="alert alert-warning">
-			<h1>'.$count_cate_2.'</h1>
+			<h1>' . $count_cate_2 . '</h1>
 			<p>Chuyên mục vừa</p>
 		</div>
 	</div>
@@ -235,11 +235,11 @@ if ($data_user['position'] == '1')
 	$sql_get_count_cate_3 = "SELECT id_cate FROM categories WHERE type = '3'";
 	$count_cate_3 = $db->num_rows($sql_get_count_cate_3);
 
-	echo 
+	echo
 	'
 	<div class="col-md-3">
 		<div class="alert alert-danger">
-			<h1>'.$count_cate_3.'</h1>
+			<h1>' . $count_cate_3 . '</h1>
 			<p>Chuyên mục nhỏ</p>
 		</div>
 	</div>
@@ -253,11 +253,11 @@ if ($data_user['position'] == '1')
 		$sql_get_count_acc = "SELECT id_acc FROM accounts WHERE position = '0'";
 		$count_acc = $db->num_rows($sql_get_count_acc);
 
-		echo 
+		echo
 		'
 		<div class="col-md-4">
 			<div class="alert alert-info">
-				<h1>'.$count_acc.'</h1>
+				<h1>' . $count_acc . '</h1>
 				<p>Tổng tài khoản</p>
 			</div>
 		</div>
@@ -267,11 +267,11 @@ if ($data_user['position'] == '1')
 		$sql_get_count_acc = "SELECT id_acc FROM accounts WHERE position = '0' AND status = '0'";
 		$count_acc_active = $db->num_rows($sql_get_count_acc);
 
-		echo 
+		echo
 		'
 		<div class="col-md-4">
 			<div class="alert alert-success">
-				<h1>'.$count_acc_active.'</h1>
+				<h1>' . $count_acc_active . '</h1>
 				<p>Tài khoản hoạt động</p>
 			</div>
 		</div>
@@ -281,11 +281,11 @@ if ($data_user['position'] == '1')
 		$sql_get_count_acc = "SELECT id_acc FROM accounts WHERE position = '0' AND status = '1'";
 		$count_acc_lock = $db->num_rows($sql_get_count_acc);
 
-		echo 
+		echo
 		'
 		<div class="col-md-4">
 			<div class="alert alert-warning">
-				<h1>'.$count_acc_lock.'</h1>
+				<h1>' . $count_acc_lock . '</h1>
 				<p>Tài khoản bị khóa</p>
 			</div>
 		</div>

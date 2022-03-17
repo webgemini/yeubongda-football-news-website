@@ -57,7 +57,7 @@ if ($user)
 		//Xóa nhiều ảnh cùng lúc
 		if ($action == 'delete_img_list')
 		{
-			foreach ($_POST['id_img'] as $key => $id_img) 
+			foreach ($_POST['id_img'] as $key => $id_img)
 			{
 				$sql_check_id_img_exits = "SELECT * FROM images WHERE id_img = '$id_img'";
 				if ($db->num_rows($sql_check_id_img_exits))
@@ -68,7 +68,7 @@ if ($user)
 						unlink('../'.$data_img['url']);
 					}
 
-					$sql_delete_img = "DELETE FROM images WHERE id_img='$id_img'";
+					$sql_delete_img = "DELETE FROM images WHERE id_img = '$id_img'";
 					$db->query($sql_delete_img);
 				}
 			}

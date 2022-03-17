@@ -53,9 +53,9 @@ if ($user)
 			$sql_get_cate_2 = "SELECT id_cate, label FROM categories WHERE type = '2' AND parent_id = '$parent_id'";
 			if ($db->num_rows($sql_get_cate_2))
 			{
-				foreach ($db->fetch_assoc($sql_get_cate_2, 0) as $key => $data_cate_2) 
+				foreach ($db->fetch_assoc($sql_get_cate_2, 0) as $key => $data_cate_2)
 				{
-					echo '<option value="'.$data_cate_2['id_cate'].'">'.$data_cate_2['label'].'</option>';
+					echo '<option value="' . $data_cate_2['id_cate'] . '">' . $data_cate_2['label'] . '</option>';
 				}
 			}else
 			{
@@ -68,7 +68,7 @@ if ($user)
 			$sql_get_cate_3 = "SELECT id_cate, label FROM categories WHERE type = '3'AND parent_id = '$parent_id'";
 			if ($db->num_rows($sql_get_cate_3))
 			{
-				foreach ($db->fetch_assoc($sql_get_cate_3, 0) as $key => $data_cate_3) 
+				foreach ($db->fetch_assoc($sql_get_cate_3, 0) as $key => $data_cate_3)
 				{
 					echo '<option value="'.$data_cate_3['id_cate'].'">'.$data_cate_3['label'].'</option>';
 				}
@@ -114,13 +114,13 @@ if ($user)
 				$db->query($sql_edit_post);
 				$db->close();
 				echo $show_alert.$success.'Chỉnh sửa bài viết thành công.';
-				new Redirect($_DOMAIN.'admin/posts/edit/'.$id_post);
+				new Redirect($_DOMAIN.'admin/posts/edit/'. $id_post);
 			}
 		}
 		//-- Xóa bài viết --
 		else if ($action == 'delete_post_list')
 		{
-			foreach ($$_POST['id_post'] as $key => $id_post) 
+			foreach ($$_POST['id_post'] as $key => $id_post)
 			{
 				$sql_check_id_post_exist = "SELECT id_post FROM posts WHERE id_post = '$id_post'";
 				if ($db->num_rows($sql_check_id_post_exist))
@@ -154,7 +154,7 @@ if ($user)
 				// Nếu có kết quả
 				if ($db->num_rows($sql_search_post))
 				{
-					echo 
+					echo
 					'
 						<table class="table table-striped list">
 							<tr>
@@ -171,7 +171,7 @@ if ($user)
 					{
 						echo '<td><strong>Tác giả</strong></td>';
 					}
-					echo 
+					echo
 					'
 								<td><strong>Tools</strong></td>
 							</tr>
@@ -201,11 +201,11 @@ if ($user)
 							$cate_post .= '<span class="text-danger">Lỗi</span>';
 						}
 
-						$sql_check_id_cate_2 = "SELECT label, id_cate FROM categories WHERE id_cate='$data_post[cate_2_id]' AND type = '2'";
+						$sql_check_id_cate_2 = "SELECT label, id_cate FROM categories WHERE id_cate = '$data_post[cate_2_id]' AND type = '2'";
 						if ($db->num_rows($sql_check_id_cate_2))
 						{
 							$data_cate_2 = $db->fetch_assoc($sql_check_id_cate_2, 1);
-							$cate_post .= ', '.$data_cate_2['label'];
+							$cate_post .= ', ' . $data_cate_2['label'];
 						}else
 						{
 							$cate_post .= ', <span class="text-danger">Lỗi</span>';
@@ -215,7 +215,7 @@ if ($user)
 						if ($db->num_rows($sql_check_id_cate_3))
 						{
 							$data_cate_3 = $db->fetch_assoc($sql_check_id_cate_3, 1);
-							$cate_post .= ', '.$data_cate_3['label'];
+							$cate_post .= ', ' . $data_cate_3['label'];
 						}else
 						{
 							$cate_post .= ', <span class="text-danger">Lỗi</span>';
@@ -232,15 +232,15 @@ if ($user)
 							$author_post = '<span class="text-danger">Lỗi</span>';
 						}
 
-						echo 
+						echo
 						'
 							<tr>
-								<td><input type="checkbox" name="id_post[]" value="'.$data_post['id_post'].'"></td>
-								<td>'.$data_post['id_post'].'</td>
-								<td style="width: 30%;"><a href="'.$_DOMAIN.'posts/edit/'.$data_post['id_post'].'" title="">'.$data_post['title'].'</a></td>
-								<td>'.$stt_post.'</td>
-								<td>'.$cate_post.'</td>
-								<td>'.$data_post['view'].'</td>
+								<td><input type="checkbox" name="id_post[]" value="' . $data_post['id_post'] . '"></td>
+								<td>' . $data_post['id_post'] . '</td>
+								<td style="width: 30%;"><a href="'.$_DOMAIN.'posts/edit/' . $data_post['id_post'] . '" title="">' . $data_post['title'] . '</a></td>
+								<td>' . $stt_post . '</td>
+								<td>' . $cate_post.'</td>
+								<td>' . $data_post['view'] . '</td>
 						';
 
 						//Tác giả bài viết
@@ -248,20 +248,20 @@ if ($user)
 						{
 							echo '<td>'.$author_post.'</td>';
 						}
-						echo 
+						echo
 						'
 								<td>
-									<a href="'.$_DOMAIN.'posts/edit/'.$data_post['id_post'].'" class="btn btn-primary btn-sm">
+									<a href="' . $_DOMAIN . 'posts/edit/' . $data_post['id_post'] . '" class="btn btn-primary btn-sm">
 										<span class="glyphicon glyphicon-edit"></span>
 									</a>
-									<a class="btn btn-danger btn-sm del-post-list" data-id="'.$data_post['id_post'].'">
+									<a class="btn btn-danger btn-sm del-post-list" data-id="' . $data_post['id_post'] . '">
 										<span class="glyphicon glyphicon-trash"></span>
 									</a>
 								</td>
 							</tr>
 						';
 					}
-					echo 
+					echo
 					'
 						</table>
 					';

@@ -1,0 +1,21 @@
+# Bảo vệ file .htaccess
+ErrorDocument 404 http://localhost/yeubongda/404.php
+<Files .htaccess>
+Order Allow,Deny
+Deny from all
+</Files>
+
+# Rewrite url
+RewriteEngine on
+#Url bài viết
+RewriteRule ^([a-zA-Z0-9_-]+)-([0-9]+).html$ index.php?sp=$1&id=$2
+RewriteRule ^([a-zA-Z0-9_-]+)-([0-9]+).html/$ index.php?sp=$1&id=$2
+#Url chuyên mục
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?sc=$1
+RewriteRule ^([a-zA-Z0-9_-]+)/$ index.php?sc=$1
+# Url phân trang chuyên mục
+RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)$ index.php?sc=$1&p=$2
+RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)/$ index.php?sc=$1&p=$2
+# Url phân trang bài viết mới nhất
+RewriteRule ^([0-9]+)$ index.php?p=$1
+RewriteRule ^([0-9]+)/$ index.php?p=$1

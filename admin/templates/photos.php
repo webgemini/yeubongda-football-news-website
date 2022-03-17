@@ -19,7 +19,7 @@ if ($user)
 		if ($ac == 'add')
 		{
 			// Dãy nút upload hình ảnh
-			echo 
+			echo
 			'
 				<a href="'.$_DOMAIN.'admin/photos" class="btn btn-default">
 					<span class="glyphicon glyphicon-arrow-left"></span> Trở về
@@ -27,7 +27,7 @@ if ($user)
 			';
 
 			//-- Content upload hình ảnh --
-			echo 
+			echo
 			'
 				<p class="form-up-img">
 					<div class="alert alert-info">Mỗi lần upload tối đa 20 file ảnh. Mỗi file  có dung lượng không vượt quá 5mb và có đuôi định dạng là .jpg, .png, .gif</div>
@@ -60,7 +60,7 @@ if ($user)
 	else
 	{
 		// Dãy nút của danh sách hình ảnh
-		echo 
+		echo
 		'
 			<a href="'.$_DOMAIN.'admin/photos/add" class="btn btn-default">
 				<span class="glyphicon glyphicon-plus"></span> Thêm
@@ -70,7 +70,7 @@ if ($user)
 			</a>
 		';
 		if ($data_user['position'] == '1') {
-		echo 
+		echo
 		'
 			<a class="btn btn-danger" id="del_img_list">
 				<span class="glyphicon glyphicon-trash"></span> Xóa
@@ -83,7 +83,7 @@ if ($user)
 		$sql_get_img = "SELECT * FROM images ORDER BY id_img DESC";
 		if ($db->num_rows($sql_get_img))
 		{
-			echo 
+			echo
 			'
 				<div class="row list" id="list_img">
 					<div class="col-md-12">
@@ -110,52 +110,53 @@ if ($user)
 				}else if ($data_img['size'] > 1048576)
 				{
 					$size_img = round($data_img['size'] / 1024 / 1024).'MB';
-				}  if ($data_user['position'] == '1')
+				}
+				if ($data_user['position'] == '1')
 				{
-				echo 
+				echo
 				'
 					<div class="col-md-3">
 						<div class="thumbnail">
-							<a href="'.str_replace('admin/', '', $_DOMAIN).$data_img['url'].'">
-								<img src="'.str_replace('admin/', '', $_DOMAIN).$data_img['url'].'" style="height: 150px;">
+							<a href="' . str_replace('admin/', '', $_DOMAIN) . $data_img['url'] . '">
+								<img src="' . str_replace('admin/', '', $_DOMAIN) . $data_img['url'] . '" style="height: 150px;">
 							</a>
 							<div class="caption">
 								<div class="input-group">
 									<span class="input-group-addon">
-										<input type="checkbox" name="id_img[]" value="'.$data_img['id_img'].'">
+										<input type="checkbox" name="id_img[]" value="' . $data_img['id_img'] . '">
 									</span>
-									<input type="text" class="form-control" value="'.str_replace('admin/', '', $_DOMAIN).$data_img['url'].'" readonly>
+									<input type="text" class="form-control" value="' . str_replace('admin/', '', $_DOMAIN) . $data_img['url'] . '" readonly>
 									<span class="input-group-btn">
-										<button class="btn btn-danger del-img" data-id="'.$data_img['id_img'].'">
+										<button class="btn btn-danger del-img" data-id="' . $data_img['id_img'] . '">
 											<span class="glyphicon glyphicon-trash"></span>
 										</button>
 									</span>
 								</div>
-								<p>Trạng thái: '.$status_img.'</p>
-								<p>Dung lượng: '.$size_img.'</p>
-								<p>Định dạng: '.strtoupper($data_img['type']).'</p>
+								<p>Trạng thái: ' . $status_img . '</p>
+								<p>Dung lượng: ' . $size_img . '</p>
+								<p>Định dạng: ' . strtoupper($data_img['type']) . '</p>
 							</div>
 						</div>
 					</div>
 				';
 				}else {
-					echo 
+					echo
 				'
 					<div class="col-md-3">
 						<div class="thumbnail">
-							<a href="'.str_replace('admin/', '', $_DOMAIN).$data_img['url'].'">
-								<img src="'.str_replace('admin/', '', $_DOMAIN).$data_img['url'].'" style="height: 150px;">
+							<a href="'.str_replace('admin/', '', $_DOMAIN) . $data_img['url'] . '">
+								<img src="'.str_replace('admin/', '', $_DOMAIN) . $data_img['url'] . '" style="height: 150px;">
 							</a>
 							<div class="caption">
 								<div class="input-group">
 									<span class="input-group-addon">
-										<input type="checkbox" name="id_img[]" value="'.$data_img['id_img'].'">
+										<input type="checkbox" name="id_img[]" value="' . $data_img['id_img'] . '">
 									</span>
-									<input type="text" class="form-control" value="'.str_replace('admin/', '', $_DOMAIN).$data_img['url'].'" readonly="">
+									<input type="text" class="form-control" value="'.str_replace('admin/', '', $_DOMAIN) . $data_img['url'] . '" readonly="">
 								</div>
-								<p>Trạng thái: '.$status_img.'</p>
-								<p>Dung lượng: '.$size_img.'</p>
-								<p>Định dạng: '.strtoupper($data_img['type']).'</p>
+								<p>Trạng thái: ' . $status_img . '</p>
+								<p>Dung lượng: ' . $size_img . '</p>
+								<p>Định dạng: ' . strtoupper($data_img['type']) . '</p>
 							</div>
 						</div>
 					</div>

@@ -11,7 +11,7 @@ if ($user)
 
 		// Mở/đóng hoạt động của website
 
-		echo 
+		echo
 		'
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -29,7 +29,7 @@ if ($user)
 
 			if ($data_web['status'] == '0')
 			{
-				echo 
+				echo
 				'
 					<div class="radio">
 						<label><input type="radio" value="1" name="stt_web"> Mở</label>
@@ -40,7 +40,7 @@ if ($user)
 				';
 			}else if ($data_web['status'] == '1')
 			{
-				echo 
+				echo
 				'
 					<div class="radio">
 						<label><input type="radio" value="1" name="stt_web" checked> Mở</label>
@@ -51,7 +51,7 @@ if ($user)
 				';
 			}
 		}
-		echo 
+		echo
 		'
 					<button type="submit" class="btn btn-primary">Lưu</button><br><br>
 					<div class="alert alert-danger hidden"></div>
@@ -59,7 +59,7 @@ if ($user)
 			</div>
 		</div>
 		';
-		
+
 		// Chỉnh sửa thông tin website
 		$sqlGetInfoWeb = "SELECT title, descr, keywords FROM website";
 		if ($db->num_rows($sqlGetInfoWeb))
@@ -67,7 +67,7 @@ if ($user)
 			$data_web = $db->fetch_assoc($sqlGetInfoWeb, 1);
 		}
 
-		echo 
+		echo
 		'
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -77,15 +77,15 @@ if ($user)
 					<form method="POST" id="formInforWeb" onsubmit="return false;">
 						<div class="form-group">
 							<label>Tiêu đề website</label>
-							<input type="text" class="form-control" value="'.$data_web['title'].'" id="title_web">
+							<input type="text" class="form-control" value="' . $data_web['title'] . '" id="title_web">
 						</div>
 						<div class="form-group">
 							<label>Mô tả website</label>
-							<textarea class="form-control" id="descr_web">'.$data_web['descr'].'</textarea>
+							<textarea class="form-control" id="descr_web">' . $data_web['descr'] . '</textarea>
 						</div>
 						<div class="form-group">
 							<label>Từ khóa website</label>
-							<input type="text" class="form-control" value="'.$data_web['keywords'].'" id="keywords_web">
+							<input type="text" class="form-control" value="' . $data_web['keywords'] . '" id="keywords_web">
 						</div>
 						<button type="submit" class="btn btn-primary">Lưu</button>
 						<div class="alert alert-danger hidden">Lưu</div>

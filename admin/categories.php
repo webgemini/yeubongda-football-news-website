@@ -28,7 +28,7 @@ if ($user)
 					//In danh sách các chuyên mục cha theo type parent
 					foreach($db->fetch_assoc($sql_get_cate, 0) as $key => $data_cate)
 					{
-						echo '<option value="'.$data_cate['id_cate'].'">'.$data_cate['label'].'</option>';
+						echo '<option value="' . $data_cate['id_cate'] . '">' . $data_cate['label'] . '</option>';
 					}
 				}else{
 					echo '<option value="0">Hiện chưa có chuyên mục cha nào</option>';
@@ -94,16 +94,16 @@ if ($user)
 				$sql_get_cate = "SELECT * FROM categories WHERE type = '$type_edit_parent_cate'";
 				if ($db->num_rows($sql_get_cate))
 				{
-					foreach ($db->fetch_assoc($sql_get_cate, 0) as $key => $data_cate) 
+					foreach ($db->fetch_assoc($sql_get_cate, 0) as $key => $data_cate)
 					{
 						if ($id_edit_cate != $data_cate['id_cate'])
 						{
-							echo '<option value="'.$data_cate['id_cate'].'">'.$data_cate['label'].'</option>';
+							echo '<option value="' . $data_cate['id_cate'] . '">' . $data_cate['label'] . '</option>';
 						}
 					}
 				}else
 				{
-					echo '<option value="0">Hiện chưa có chuyên mục cha nào'.$type_edit_cate.'</option>';
+					echo '<option value="0">Hiện chưa có chuyên mục cha nào' . $type_edit_cate . '</option>';
 				}
 			}
 		}

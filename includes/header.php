@@ -77,13 +77,13 @@ if (isset($_GET['sp']) && isset($_GET['id']))
 								$sub_menu = '<ul class="dropdown-menu">';
 								foreach ($db->fetch_assoc($sql_get_list_menu_2, 0) as $data_menu_2)
 								{
-									$sub_menu .= '<li><a href="'.$_DOMAIN .$data_menu_2['url'].'">'.$data_menu_2['label'].'</a></li>';
+									$sub_menu .= '<li><a href="'.$_DOMAIN . $data_menu_2['url'] . '">' . $data_menu_2['label'] . '</a></li>';
 								}
 								$sub_menu .= '</ul>';
-								echo 
+								echo
 								'
 									<li class="dropdown">
-										<a href="'.$_DOMAIN .$data_menu_1['url'].'" class="dropdown-toggle" data-toggle="dropdown">'.$data_menu_1['label'].'
+										<a href="' . $_DOMAIN . $data_menu_1['url'] . '" class="dropdown-toggle" data-toggle="dropdown">' . $data_menu_1['label'] . '
 										<span class="caret"></span>
 										</a>
 										'.$sub_menu.'
@@ -92,7 +92,7 @@ if (isset($_GET['sp']) && isset($_GET['id']))
 							}else
 							{
 								$sub_menu = '';
-								echo '<li><a href="'.$_DOMAIN .$data_menu_1['url'].'">'.$data_menu_1['label'].'</a>'.$sub_menu.'</li>';
+								echo '<li><a href="' . $_DOMAIN . $data_menu_1['url'] . '">' . $data_menu_1['label'] . '</a>' . $sub_menu . '</li>';
 							}
 						}
 					}

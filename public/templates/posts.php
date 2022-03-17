@@ -27,7 +27,7 @@ $limit_view = 12;
 						// In chuyên mục bài viết
 						echo '
 						<li itemscope>
-						<a itemscope="url" href="'.$_DOMAIN.'" title="Yêu Bóng Đá"><span itemprop="title">Trang chủ</span></a>
+						<a itemscope="url" href="' . $_DOMAIN . '" title="Yêu Bóng Đá"><span itemprop="title">Trang chủ</span></a>
 						</li>
 						';
 						for ($i = 1; $i <= 3; $i++)
@@ -42,7 +42,7 @@ $limit_view = 12;
 									$data_cate = $db->fetch_assoc($sql_get_data_cate, 1);
 									echo '
 									<li itemscope>
-									<a href="'.$_DOMAIN . $data_cate['url'].'" title="'.$data_cate['label'].'"><span itemprop="title">'.$data_cate['label'].'</span></a>
+									<a href="' . $_DOMAIN . $data_cate['url'] . '" title="' . $data_cate['label'] . '"><span itemprop="title">' . $data_cate['label'] . '</span></a>
 									</li>
 									';
 								}
@@ -50,7 +50,7 @@ $limit_view = 12;
 						}
 						echo '
 						<li itemscope>
-						<span itemprop="title">'.$data_post['title'].'</span>
+						<span itemprop="title">' . $data_post['title'] . '</span>
 						</li>
 						';
 						?>
@@ -58,9 +58,12 @@ $limit_view = 12;
 				<!-- ------ main-content ------ -->
 				<div class="col630 fr">
 					<h1 class="time_detail_news">
-						<?php echo '
-						<a href="'. $_DOMAIN . $data_post['slug'] .'-'. $data_post['id_post'] .'.html">'.$data_post['title'].'</a>
-						'; ?>
+						<?php
+						echo
+						'
+						<a href="'. $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html">' . $data_post['title'] . '</a>
+						';
+						?>
 					</h1>
 					<div class="info_detail pkg mar_bottom10">
 						<div class="author">
@@ -74,7 +77,7 @@ $limit_view = 12;
 					<article id="content_detail">
 						<div itemprop="articleBody" class="exp_content news_details">
 							<?php echo htmlspecialchars_decode($data_post['body']); ?>
-							<div class="text-right mar_top10 mar_bottom10"><?php echo 'Xuất bản ngày: '.$data_post['date_posted']?></div>
+							<div class="text-right mar_top10 mar_bottom10"><?php echo 'Xuất bản ngày: ' . $data_post['date_posted']; ?></div>
 						</div>
 					</article>
 					<div class="tag_detail">
@@ -100,10 +103,10 @@ $limit_view = 12;
 							{
 								foreach ($db->fetch_assoc($sql_get_list_hot_news, 0) as $data_post)
 								{
-									echo 
+									echo
 									'
 									<li>
-									<h3><a href="'.$_DOMAIN . $data_post['slug'] .'-'. $data_post['id_post'] .'.html">'.$data_post['title'].'</a></h3>
+									<h3><a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html">' . $data_post['title'] . '</a></h3>
 									</li>
 									';
 								}
@@ -125,15 +128,15 @@ $limit_view = 12;
 							{
 								foreach ($db->fetch_assoc($sql_get_invole_post, 0) as $data_post)
 								{
-									echo 
+									echo
 									'
 										<li>
 											<div class="pkg">
-												<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumbblock thumb110" title="'.$data_post['title'].'">
-						                            <img src="' . $data_post['url_thumb'] . '" width="148" height="120" alt="'.$data_post['title'].'">
+												<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumbblock thumb110" title="' . $data_post['title'] . '">
+						                            <img src="' . $data_post['url_thumb'] . '" width="148" height="120" alt="' . $data_post['title'] . '">
 						                        </a>
 						                        <h2>
-						                        <a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="title_list_top_news" title="'.$data_post['title'].'"><span>' . $data_post['title'] . '</span></a>
+						                        <a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="title_list_top_news" title="' . $data_post['title'] . '"><span>' . $data_post['title'] . '</span></a>
 						                        </h2>
 											</div>
 						                </li>
@@ -160,10 +163,10 @@ $limit_view = 12;
 							{
 								foreach ($db->fetch_assoc($sql_get_list_hot_news, 0) as $data_post)
 								{
-									echo 
+									echo
 									'
 									<li>
-									<h2><a href="'.$_DOMAIN . $data_post['slug'] .'-'. $data_post['id_post'] .'.html" class="f14" title="'.$data_post['title'].'">'.$data_post['title'].'</a></h2>
+									<h2><a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="f14" title="' . $data_post['title'] . '">' . $data_post['title'] . '</a></h2>
 									</li>
 									';
 								}
@@ -191,14 +194,14 @@ $limit_view = 12;
 							{
 								foreach ($db->fetch_assoc($sql_get_list_hot_news, 0) as $data_post)
 								{
-									echo 
+									echo
 									'
 									<li>
-										<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumb140x90 thumbblock" title="'.$data_post['title'].'">
+										<a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="thumb140x90 thumbblock" title="' . $data_post['title'] . '">
 				                            <img class="news_docnhieu playvideo" src="' . $data_post['url_thumb'] . '" width="140" height="90" alt="'.$data_post['title'].'">
 				                        </a>
 				                        <h3>
-				                        <a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="f14" title="'.$data_post['title'].'"><span>' . $data_post['title'] . '</span></a>
+				                        <a href="' . $_DOMAIN . $data_post['slug'] . '-' . $data_post['id_post'] . '.html" class="f14" title="' . $data_post['title'].'"><span>' . $data_post['title'] . '</span></a>
 				                        </h3>
 				                        <div class="time_comment mar_top7 mar_bottom7"></div>
 				                    </li>
@@ -215,14 +218,5 @@ $limit_view = 12;
 				</aside>
 			</div>
 		</div>
-	</div>
-	<div class="row">
-		
-		
-
-	</div>
-	<hr>
-	<div class="row">
-		
 	</div>
 </div>

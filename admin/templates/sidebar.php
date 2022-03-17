@@ -10,7 +10,7 @@
 					{
 						echo $_DOMAIN.'admin/images/profile.jpg';
 					}else{
-						echo str_replace('admin/', '', $_DOMAIN).$data_user['url_avatar'];
+						echo str_replace('admin/', '', $_DOMAIN) . $data_user['url_avatar'];
 					}
 					?>
 					" alt="Ảnh đại diện của <?php echo $data_user['display_name']; ?>" width="62" height="62">
@@ -49,13 +49,13 @@
 		{
 			echo
 			'
-			<a href="'.$_DOMAIN.'admin/accounts" class="list-group-item">
+			<a href="' . $_DOMAIN . 'admin/accounts" class="list-group-item">
 				<span class="glyphicon glyphicon-lock"></span> Tài khoản
 			</a>
-			<a class="list-group-item" href="'.$_DOMAIN.'admin/categories">
+			<a class="list-group-item" href="' . $_DOMAIN . 'admin/categories">
 				<span class="glyphicon glyphicon-tag"></span> Chuyên mục
 			</a>
-			<a class="list-group-item" href="'.$_DOMAIN.'admin/setting">
+			<a class="list-group-item" href="' . $_DOMAIN . 'admin/setting">
 				<span class="glyphicon glyphicon-cog"></span> Cài đặt chung
 			</a>
 			';
